@@ -1,4 +1,5 @@
 import React from 'react';
+
 //aqui esta el codigo al que se le hace refrencia en la pregunta numero 7
 const Boton = (props) => {
 
@@ -7,8 +8,9 @@ const Boton = (props) => {
     };
 
     return (
-        <div className={`boton-contenedor ${esOperador(props.children) ? "operador" : null}`} >
-            {props.children}
+        <div 
+            className={`boton-contenedor ${esOperador(props.children) ? "operador" : ""}`.trim()} >
+                {props.children}
         </div>
     );
 }
