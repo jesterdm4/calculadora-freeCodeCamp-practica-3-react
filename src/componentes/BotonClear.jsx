@@ -1,6 +1,7 @@
 const BotonClear = (props) => (
     <div 
-    className="boton-clear"
+    className="boton-clear" 
+    onClick={props.manejarClic}
     >
         {props.children}
     </div>

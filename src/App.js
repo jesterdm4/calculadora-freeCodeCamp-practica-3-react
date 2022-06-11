@@ -16,6 +16,10 @@ function App() {
     setInput(input + valor);
   };
 
+  const limpiarInput = () => {
+    setInput("");
+  }
+
   return (
     <div className="App">
       <div className='logo-contenedor'>
@@ -51,7 +55,7 @@ function App() {
           <Boton manejarClic={agregarInput}>/</Boton>
         </div>
         <div className='fila'>
-          <BotonClear>Clear</BotonClear>
+          <BotonClear manejarClic={limpiarInput}>Clear</BotonClear>
         </div>
       </div>
     </div>
