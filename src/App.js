@@ -4,8 +4,18 @@ import Boton from './componentes/Boton.jsx';
 import "./hojas-de-estilo/Boton.css";
 import Pantalla from './componentes/Pantalla.jsx';
 import "./hojas-de-estilo/Pantalla.css";
+import BotonClear from './componentes/BotonClear.jsx';
+import "./hojas-de-estilo/BotonClear.css";
+import { useState } from "react";
 
 function App() {
+
+  const [input, setInput] = useState("");
+
+  const agregarInput = (valor) => {
+    setInput(input + valor);
+  };
+
   return (
     <div className="App">
       <div className='logo-contenedor'>
@@ -15,32 +25,34 @@ function App() {
         />
       </div>
       <div className='contenedor-calculadora'>
-        <Pantalla />
+        <Pantalla input={input}/>
         <div className='fila'>
-          <Boton>1</Boton>
-          <Boton>2</Boton>
-          <Boton>3</Boton>
-          <Boton>+</Boton>
+          <Boton manejarClic={agregarInput}>1</Boton>
+          <Boton manejarClic={agregarInput}>2</Boton>
+          <Boton manejarClic={agregarInput}>3</Boton>
+          <Boton manejarClic={agregarInput}>+</Boton>
         </div>
         <div className='fila'>
-          <Boton>4</Boton>
-          <Boton>5</Boton>
-          <Boton>6</Boton>
-          <Boton>-</Boton>
+          <Boton manejarClic={agregarInput}>4</Boton>
+          <Boton manejarClic={agregarInput}>5</Boton>
+          <Boton manejarClic={agregarInput}>6</Boton>
+          <Boton manejarClic={agregarInput}>-</Boton>
         </div>
         <div className='fila'>
-          <Boton>7</Boton>
-          <Boton>8</Boton>
-          <Boton>9</Boton>
-          <Boton>*</Boton>
+          <Boton manejarClic={agregarInput}>7</Boton>
+          <Boton manejarClic={agregarInput}>8</Boton>
+          <Boton manejarClic={agregarInput}>9</Boton>
+          <Boton manejarClic={agregarInput}>*</Boton>
         </div>
         <div className='fila'>
-          <Boton>=</Boton>
-          <Boton>0</Boton>
-          <Boton>.</Boton>
-          <Boton>/</Boton>
+          <Boton manejarClic={agregarInput}>=</Boton>
+          <Boton manejarClic={agregarInput}>0</Boton>
+          <Boton manejarClic={agregarInput}>.</Boton>
+          <Boton manejarClic={agregarInput}>/</Boton>
         </div>
-        <div className='fila'></div>
+        <div className='fila'>
+          <BotonClear>Clear</BotonClear>
+        </div>
       </div>
     </div>
   );
