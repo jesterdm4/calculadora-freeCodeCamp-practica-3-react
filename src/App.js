@@ -19,7 +19,7 @@ function App() {
 
   const limpiarInput = () => {
     setInput("");
-  }
+  };
 
   const calcularResultado = () => {
     setInput(evaluate(input));
