@@ -1,12 +1,13 @@
 import './App.css';
 import logo from "./imagenes/logo.png";
 import Boton from './componentes/Boton.jsx';
-import "./hojas-de-estilo/Boton.css";
+
 import Pantalla from './componentes/Pantalla.jsx';
 import "./hojas-de-estilo/Pantalla.css";
 import BotonClear from './componentes/BotonClear.jsx';
 import "./hojas-de-estilo/BotonClear.css";
 import { useState } from "react";
+import { evaluate } from "mathjs";
 
 function App() {
 
@@ -19,6 +20,10 @@ function App() {
   const limpiarInput = () => {
     setInput("");
   }
+
+  const calcularResultado = () => {
+    setInput(evaluate(input));
+  };
 
   return (
     <div className="App">
@@ -49,7 +54,7 @@ function App() {
           <Boton manejarClic={agregarInput}>*</Boton>
         </div>
         <div className='fila'>
-          <Boton manejarClic={agregarInput}>=</Boton>
+          <Boton manejarClic={calcularResultado}>=</Boton>
           <Boton manejarClic={agregarInput}>0</Boton>
           <Boton manejarClic={agregarInput}>.</Boton>
           <Boton manejarClic={agregarInput}>/</Boton>

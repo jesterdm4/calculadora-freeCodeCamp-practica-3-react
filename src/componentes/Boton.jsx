@@ -1,4 +1,5 @@
 import React from 'react';
+import "../hojas-de-estilo/Boton.css";
 
 //aqui esta el codigo al que se le hace refrencia en la pregunta numero 7
 const Boton = (props) => {
